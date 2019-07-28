@@ -9,7 +9,7 @@ import (
 	"gonum.org/v1/plot/vg"
 )
 
-func Plot(data1 plotter.XYs,data2 plotter.XYs,data3 plotter.XYs,data4 plotter.XYs) {
+func Plot(data1 plotter.XYs, data2 plotter.XYs, datagernal plotter.XYs, data3 plotter.XYs, data4 plotter.XYs, data5 plotter.XYs) {
 	rand.Seed(int64(0))
 
 	p, err := plot.New()
@@ -24,8 +24,10 @@ func Plot(data1 plotter.XYs,data2 plotter.XYs,data3 plotter.XYs,data4 plotter.XY
 	err = plotutil.AddLinePoints(p,
 		"First", data1,
 		"Second", data2,
-		"3",data3,
-		"4",data4)
+		"third", datagernal,
+		"3", data3,
+		"4", data4,
+		"5", data5)
 	if err != nil {
 		panic(err)
 	}
@@ -37,4 +39,3 @@ func Plot(data1 plotter.XYs,data2 plotter.XYs,data3 plotter.XYs,data4 plotter.XY
 }
 
 // randomPoints returns some random x, y points.
-
